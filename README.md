@@ -33,7 +33,23 @@ gem "pg", "~> 1.1"
 
 * Deployment instructions
 
-* Commands that I run to create the project, you don't have to run them!!
+* Commands that I run to create the project.
+
+* Endpoint: (I use Postman)
+
+POST: Body: Raw: JSON: http://localhost:3000/books
+{
+    "title": "Redes de computadoras",
+    "author": "Andrew S. Tanenbaum"
+}
+
+POST: Body: Raw: JSON: http://localhost:3000/users
+{
+    "name": "Demis",
+    "email": "demisgero22@gmail.com"
+}
+
+---- you don't have to run them!! ----
 
 First I created new rails API with a PostgreSQL database:
 
@@ -41,12 +57,28 @@ rails new biblioteca --api --database=postgresql
 
 rails db:create
 
-rails g model Book title:string type:string author:string
+rails g scaffold Book title:string type:string author:string
 
-rails g model User name:string email:string
+rails g scaffold User name:string email:string
 
-rails g model State borrowed_at:datetime returned_at:datetime user:references book:references
+rails g scaffold State borrowed_at:datetime returned_at:datetime user:references book:references
 
 rails db:migrate
 
-* you don't have to run them!!
+
+This will reset your database and reload your current schema with all:
+
+rake db:reset db:migrate
+
+This will destroy your db and then create it and then migrate your current schema:
+
+rake db:drop db:create db:migrate
+
+
+To remove a column from a table using a Rails migration, in this case:
+
+rails g migration delete_type_column_from_books
+
+rails db:migrate
+
+---- you don't have to run them!! ----
