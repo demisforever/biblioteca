@@ -86,4 +86,11 @@ Serializer provides a way of creating custom JSON in an object-oriented manner.
 ```
 rails generate serializer State
 ```
+
+Test Book model and controller
+```
+rails generate rspec:install
+rails generate rspec:model Book
+rails generate rspec:controller Book
+```
 ## ---- you don't have to run them!! ----
