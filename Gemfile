@@ -12,7 +12,11 @@ gem "pg", "~> 1.1"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
+# interactor is responsible for encapsulating and separate our Business Logic
 gem "interactor-rails", "~> 2.0"
+
+# Active Model Serializers provides a way of creating custom JSON in an object-oriented manner.
+gem 'active_model_serializers', '~> 0.10.2'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"

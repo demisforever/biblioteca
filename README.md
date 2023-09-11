@@ -77,8 +77,13 @@ rails g migration delete_type_column_from_books
 rails db:migrate
 ```
 
-Interactors
+Interactors is responsible for encapsulating and separate our Business Logic
 ```
 rails generate interactor book_state_create
+```
+
+Serializer provides a way of creating custom JSON in an object-oriented manner.
+```
+rails generate serializer State
 ```
 ## ---- you don't have to run them!! ----
