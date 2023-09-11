@@ -15,13 +15,11 @@ class StatesController < ApplicationController
 
   # POST /states
   def create
-    @state = State.new(state_params)
+    result = BookStateCreate.call(state_params: state_params)    
+    # logger.debug "New article: #{result.inspect} aaaaaaaaaaaaaaaaa"
 
-    if @state.save
-      render json: @state, status: :created, location: @state
-    else
-      render json: @state.errors, status: :unprocessable_entity
-    end
+    return render status: :bad_request, json: result.error unless result.success?
+    render status: :ok, json: result.state
   end
 
   # PATCH/PUT /states/1
