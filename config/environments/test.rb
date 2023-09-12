@@ -7,7 +7,15 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  
+  # Enable host
+  config.hosts = [
+    IPAddr.new("0.0.0.0/0"), # All IPv4 addresses.
+    IPAddr.new("::/0"),      # All IPv6 addresses.
+    "localhost",             # The localhost reserved domain.
+    "ec2-54-86-5-94.compute-1.amazonaws.com" # aws host
+  ]
+  
   # Turn false under Spring and add config.action_view.cache_template_loading = true.
   config.cache_classes = true
 
