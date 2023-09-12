@@ -35,14 +35,14 @@ rais s
 
 ###  Endpoint: (I use Postman)
 ```
-POST: Body: Raw: JSON: http://localhost:3000/books
+POST: Body: Raw: JSON: http://localhost:8080/books
 {
     "title": "Redes de computadoras",
     "author": "Andrew S. Tanenbaum"
 }
 ```
 ```
-POST: Body: Raw: JSON: http://localhost:3000/users
+POST: Body: Raw: JSON: http://localhost:8080/users
 {
     "name": "Demis",
     "email": "demisgero22@gmail.com"
