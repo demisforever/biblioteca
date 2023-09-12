@@ -30,6 +30,11 @@ rais s
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
+    * connect to EC2 instance
+```
+ssh ec2-user@54.86.5.94 -i [name-file-pass.pem]
+```
+
 
 * Commands that I run to create the project.
 
@@ -54,10 +59,10 @@ POST: Body: Raw: JSON: http://localhost:8080/users
 First I created new rails API with a PostgreSQL database:
 ```
 rails new biblioteca --api --database=postgresql
-rails db:create
 rails g scaffold Book title:string type:string author:string
 rails g scaffold User name:string email:string
 rails g scaffold State borrowed_at:datetime returned_at:datetime user:references book:references
+rails db:create
 rails db:migrate
 ```
 
