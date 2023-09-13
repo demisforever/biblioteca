@@ -38,19 +38,30 @@ ssh ec2-user@54.86.5.94 -i [name-file-pass.pem]
 
 * Commands that I run to create the project.
 
-###  Endpoint: (I use Postman)
-```
+###  Endpoint: (I use Postman), examples POST usage
+
 POST: Body: Raw: JSON: http://localhost:8080/books
+```
 {
     "title": "Redes de computadoras",
     "author": "Andrew S. Tanenbaum"
 }
 ```
-```
+
 POST: Body: Raw: JSON: http://localhost:8080/users
+```
 {
     "name": "Demis",
     "email": "demisgero22@gmail.com"
+}
+```
+
+POST: Body: Raw: JSON: http://localhost:8080/states
+```
+{
+    "borrowed_at": "2023-11-12T19:43:31.323Z",
+    "user_id": 1,
+    "book_id": 2
 }
 ```
 
